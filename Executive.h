@@ -5,6 +5,7 @@
 #include <string>
 #include <fstream>
 #include <limits>
+#include <stdexcept>
 #include "BinaryTree.h"
 #include "Rating.h"
 

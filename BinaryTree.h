@@ -2,6 +2,7 @@
 #define BINARY_TREE_H
 
 #include "TreeNode.h"
+#include <stdexcept>
 
 template <typename T>
 class BinaryTree
@@ -16,13 +17,13 @@ class BinaryTree
 
   TreeNode<T>* GetRoot();
 
-  bool IsFull(TreeNode<T>* root); //true if the tree is full, false otherwise
+  bool IsFull(TreeNode<T>* root); //true if the tree is full, false otherwise //DONE
   void Add(T entry); //Adds a node to the tree in level order
   void Remove(); //Removes the deepest most right node from the tree
   bool Leaf(T entry); //True if node containing entry is a leaf, false otherwise
 
   void PrintLeaves(); //prints movie TITLE AND SCORE of each leaf
-  int TreeHeight(); //returns the height of a tree
+  int TreeHeight(TreeNode<T>* root) throw (std::runtime_error); //returns the height of a tree
 
   void PrintPreorder(); //only prints movie SCORE
   void PrintPostorder(); //only prints movie SCORE

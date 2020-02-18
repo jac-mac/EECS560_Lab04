@@ -23,6 +23,20 @@ void Executive::Run()
           std::cout << "\nThis tree is NOT full.\n\n";
         break;
 
+      case 6:
+      {
+        try
+        {
+          std::cout << "The height of this tree is... ";
+          std::cout << bt->TreeHeight(bt->GetRoot()) << '\n';
+        }
+        catch(std::runtime_error& rte)
+        {
+          rte.what();
+        }
+        break;
+      }
+
       default:
         std::cout << "Input could not be recognized.\n\n";
     }
@@ -31,7 +45,7 @@ void Executive::Run()
 
 void Executive::PrintMenu()
 {
-  std::cout << "Choose one of the options below: \n\n";
+  std::cout << "\nChoose one of the options below: \n\n";
   std::cout << "\t 1. IsFull\n"
             << "\t 2. AddMovie\n"
             << "\t 3. RemoveMovie\n"
