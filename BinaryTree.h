@@ -13,7 +13,7 @@ class BinaryTree
   BinaryTree<T>();
   BinaryTree<T>(TreeNode<T>* r);
 
-  TreeNode<T>* getRoot();
+  TreeNode<T>* GetRoot();
 };
 #include "BinaryTree.cpp"
 #endif

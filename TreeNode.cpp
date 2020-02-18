@@ -11,37 +11,37 @@ TreeNode<T>::TreeNode(T item, TreeNode* left, TreeNode* right)
 }
 
 template <typename T>
-T TreeNode<T>::getItem()
+T TreeNode<T>::GetItem()
 {
   return item;
 }
 
 template <typename T>
-TreeNode<T>* TreeNode<T>::getLeftChild()
+TreeNode<T>* TreeNode<T>::GetLeftChild()
 {
   return leftChild;
 }
 
 template <typename T>
-TreeNode<T>* TreeNode<T>::getRightChild()
+TreeNode<T>* TreeNode<T>::GetRightChild()
 {
   return rightChild;
 }
 
 template <typename T>
-void TreeNode<T>::setItem(T anItem)
+void TreeNode<T>::SetItem(T anItem)
 {
   item = anItem;
 }
 
 template <typename T>
-void TreeNode<T>::setLeftChild(TreeNode<T>* left)
+void TreeNode<T>::SetLeftChild(TreeNode<T>* left)
 {
   leftChild = left;
 }
 
 template <typename T>
-void TreeNode<T>::setRightChild(TreeNode<T>* right)
+void TreeNode<T>::SetRightChild(TreeNode<T>* right)
 {
   rightChild = right;
 }

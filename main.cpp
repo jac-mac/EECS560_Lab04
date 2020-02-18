@@ -9,6 +9,6 @@ int main(int argc, char* argv[])
   else
   {
     Executive exec(argv[1]);
-    exec.run();
+    exec.Run();
   }
 }

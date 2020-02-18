@@ -15,6 +15,6 @@ class Executive
 
   public:
   Executive(string file);
-  void run();
+  void Run();
 };
 #endif

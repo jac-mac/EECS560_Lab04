@@ -13,13 +13,13 @@ class TreeNode
   TreeNode<T>(T item);
   TreeNode<T>(T item, TreeNode<T>* left, TreeNode<T>* right);
 
-  T getItem();
-  TreeNode<T>* getLeftChild();
-  TreeNode<T>* getRightChild();
+  T GetItem();
+  TreeNode<T>* GetLeftChild();
+  TreeNode<T>* GetRightChild();
 
-  void setItem(T anItem);
-  void setLeftChild(TreeNode<T>* left);
-  void setRightChild(TreeNode<T>* right);
+  void SetItem(T anItem);
+  void SetLeftChild(TreeNode<T>* left);
+  void SetRightChild(TreeNode<T>* right);
 
 
 };

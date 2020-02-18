@@ -11,7 +11,7 @@ BinaryTree<T>::BinaryTree(TreeNode<T>* r)
 }
 
 template <typename T>
-TreeNode<T>* BinaryTree<T>::getRoot()
+TreeNode<T>* BinaryTree<T>::GetRoot()
 {
   return root;
 }

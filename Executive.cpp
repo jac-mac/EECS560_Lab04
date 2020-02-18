@@ -5,7 +5,7 @@ Executive::Executive(string file)
   fileName = file;
 }
 
-void Executive::run()
+void Executive::Run()
 {
-  
+
 }
