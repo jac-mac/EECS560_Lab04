@@ -17,7 +17,7 @@ void Executive::Run()
     switch(num)
     {
       case 1:
-        if(bt->IsFull(bt->GetRoot()))
+        if(bt->IsFull(bt->GetRootPtr()))
           std::cout << "\nThis tree is a FULL tree.\n\n";
         else
           std::cout << "\nThis tree is NOT full.\n\n";
@@ -28,7 +28,7 @@ void Executive::Run()
         try
         {
           std::cout << "The height of this tree is... ";
-          std::cout << bt->TreeHeight(bt->GetRoot()) << '\n';
+          std::cout << bt->TreeHeight(bt->GetRootPtr()) << '\n';
         }
         catch(std::runtime_error& rte)
         {

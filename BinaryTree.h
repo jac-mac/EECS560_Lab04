@@ -8,14 +8,14 @@ template <typename T>
 class BinaryTree
 {
   private:
-  TreeNode<T>* root;
+  TreeNode<T>* rootPtr;
   int nodeCount;
 
   public:
   BinaryTree<T>();
   BinaryTree<T>(TreeNode<T>* r);
 
-  TreeNode<T>* GetRoot();
+  TreeNode<T>* GetRootPtr();
 
   bool IsFull(TreeNode<T>* root); //true if the tree is full, false otherwise //DONE
   void Add(T entry); //Adds a node to the tree in level order
@@ -25,9 +25,9 @@ class BinaryTree
   void PrintLeaves(); //prints movie TITLE AND SCORE of each leaf
   int TreeHeight(TreeNode<T>* root) throw (std::runtime_error); //returns the height of a tree
 
-  void PrintPreorder(); //only prints movie SCORE
-  void PrintPostorder(); //only prints movie SCORE
-  void PrintInorder(); //only prints movie SCORE
+  void PrintPreorder(TreeNode<T>* root) throw (std::runtime_error); //only prints movie SCORE //DONE
+  void PrintPostorder() throw (std::runtime_error); //only prints movie SCORE //DONE
+  void PrintInorder(TreeNode<T>* root) throw (std::runtime_error); //only prints movie SCORE //DONE
   void PrintLevelOrder(); //only prints movie TITLE
 };
 #include "BinaryTree.cpp"

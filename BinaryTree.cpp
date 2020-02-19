@@ -1,62 +1,131 @@
 template <typename T>
 BinaryTree<T>::BinaryTree()
 {
- root = nullptr;
+ rootPtr = nullptr;
  nodeCount = 0;
 }
 
 template <typename T>
 BinaryTree<T>::BinaryTree(TreeNode<T>* r)
 {
-  root = r;
+  rootPtr = r;
 }
 
 template <typename T>
-TreeNode<T>* BinaryTree<T>::GetRoot()
+TreeNode<T>* BinaryTree<T>::GetRootPtr()
 {
-  return root;
+  return rootPtr;
 }
 
 template <typename T>
-bool BinaryTree<T>::IsFull(TreeNode<T>* root)
+bool BinaryTree<T>::IsFull(TreeNode<T>* rootPtr)
 {
-  if(root == nullptr)
+  if(rootPtr == nullptr)
   {
     return true;
   }
 
-  if(root->GetLeftChild() == nullptr && root->GetRightChild() == nullptr)
+  if(rootPtr->GetLeftChild() == nullptr && rootPtr->GetRightChild() == nullptr)
   {
     return true;
   }
 
-  if(root->GetLeftChild() != nullptr && root->GetRightChild() != nullptr)
+  if(rootPtr->GetLeftChild() != nullptr && rootPtr->GetRightChild() != nullptr)
   {
-    return (IsFull(root->GetLeftChild()) && IsFull(root->GetRightChild()));
+    return (IsFull(rootPtr->GetLeftChild()) && IsFull(rootPtr->GetRightChild()));
   }
 
   return false;
 }
 
 template <typename T>
-int BinaryTree<T>::TreeHeight(TreeNode<T>* root) throw (std::runtime_error)
+int BinaryTree<T>::TreeHeight(TreeNode<T>* rootPtr) throw (std::runtime_error)
 {
-  if(root == nullptr)
+  if(rootPtr == nullptr)
   {
     throw std::runtime_error("This tree does not exist!\n");
   }
 
-  else if(root->GetLeftChild() == nullptr && root->GetRightChild() == nullptr)
+  else if(rootPtr->GetLeftChild() == nullptr && rootPtr->GetRightChild() == nullptr)
     return 0;
 
   else
   {
-    int heightOfLeft = TreeHeight(root->GetLeftChild());
-    int heightOfRight = TreeHeight(root->GetRightChild());
+    int heightOfLeft = TreeHeight(rootPtr->GetLeftChild());
+    int heightOfRight = TreeHeight(rootPtr->GetRightChild());
 
     if(heightOfLeft < heightOfRight)
       return heightOfRight+1;
     else
       return heightOfLeft+1;
+  }
+}
+
+template <typename T>
+void BinaryTree<T>::PrintPreorder(TreeNode<T>* root) throw (std::runtime_error)
+{
+  if(this->rootPtr == nullptr)
+  {
+    throw std::runtime_error("A tree does not exist!\n");
+  }
+  else
+  {
+    std::cout << root->GetItem().GetScore();
+
+    if(rootPtr->GetLeftChild() != nullptr)
+    {
+      PrintPreorder(root->GetLeftChild());
+    }
+
+    if(rootPtr->GetRightChild() != nullptr)
+    {
+      PrintPreorder(root->GetRightChild());
+    }
+  }
+}
+
+template <typename T>
+void BinaryTree<T>::PrintPostorder() throw (std::runtime_error)
+{
+  if(this->rootPtr == nullptr)
+  {
+    throw std::runtime_error("A tree does not exist!\n");
+  }
+  else
+  {
+    if(rootPtr->GetLeftChild() != nullptr)
+    {
+      PrintInorder(rootPtr->GetLeftChild());
+    }
+
+    if(rootPtr->GetRightChild() != nullptr)
+    {
+      PrintInorder(rootPtr->GetRightChild());
+    }
+
+    std::cout << rootPtr->GetItem().GetScore();
+  }
+}
+
+template <typename T>
+void BinaryTree<T>::PrintInorder(TreeNode<T>* root) throw (std::runtime_error)
+{
+  if(this->rootPtr == nullptr)
+  {
+    throw std::runtime_error("A tree does not exist!\n");
+  }
+  else
+  {
+    if(rootPtr->GetLeftChild() != nullptr)
+    {
+      PrintInorder(rootPtr->GetLeftChild());
+    }
+
+    std::cout << rootPtr->GetItem().GetScore();
+
+    if(rootPtr->GetRightChild() != nullptr)
+    {
+      PrintInorder(rootPtr->GetRightChild());
+    }
   }
 }
